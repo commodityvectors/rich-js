@@ -1,0 +1,23 @@
+{
+    "name": "richie-rich",
+    "version": "1.0.0",
+    "description": "A JavaScript library for rich prototypes",
+    "main": "dist/richie-rich.min.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/commodityvectors/richie-rich.git"
+    },
+    "keywords": [
+        "rich",
+        "prototype"
+    ],
+    "author": "Rafael Grillo <grillorafael@gmail.com> (http://rgrillo.com)",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/commodityvectors/richie-rich/issues"
+    },
+    "homepage": "https://github.com/commodityvectors/richie-rich#readme"
+}

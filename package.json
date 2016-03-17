@@ -4,7 +4,7 @@
     "description": "A JavaScript library for rich prototypes",
     "main": "dist/richie-rich.min.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest --no-watchman"
     },
     "repository": {
         "type": "git",
@@ -19,5 +19,8 @@
     "bugs": {
         "url": "https://github.com/commodityvectors/richie-rich/issues"
     },
-    "homepage": "https://github.com/commodityvectors/richie-rich#readme"
+    "homepage": "https://github.com/commodityvectors/richie-rich#readme",
+    "devDependencies": {
+        "jest-cli": "^0.9.2"
+    }
 }

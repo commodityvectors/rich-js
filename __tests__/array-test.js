@@ -84,4 +84,11 @@ describe('Array', () => {
             expect(indexed[4]).toEqual(data[3]);
         });
     });
+
+    describe('sample', () => {
+        it('should return a random element from an array', () => {
+            let testData = [1, 2, 'aba', 'foo', 'bar'];
+            expect(testData.indexOf(testData.sample())).not.toEqual(-1);
+        });
+    })
 });

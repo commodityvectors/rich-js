@@ -25,4 +25,9 @@
             return result;
         }, {})
     };
+
+    Array.prototype.sample = function() {
+        const length = this.length;
+        return this[Math.floor(Math.random() * length)];
+    };
 })();

@@ -27,6 +27,11 @@
             return result;
         }, {});
     };
+
+    Array.prototype.sample = function () {
+        var length = this.length;
+        return this[Math.floor(Math.random() * length)];
+    };
 })();
 'use strict';
 

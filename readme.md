@@ -1,21 +1,19 @@
-# Richie Rich [![Build Status](https://travis-ci.org/commodityvectors/richie-rich.svg?branch=master)](https://travis-ci.org/commodityvectors/richie-rich)
+# RichJS [![Build Status](https://travis-ci.org/commodityvectors/rich-js.svg?branch=master)](https://travis-ci.org/commodityvectors/rich-js)
 
 A JavaScript library for rich prototypes
-
-![Richie Rich Logo](https://themovierat.files.wordpress.com/2013/02/logo_art1.jpg)
 
 This is a simple library designed to give a belt of good utility functions throughout your well known data types
 
 ## How to use
-You can import each module individually or all at once importing `src/richie-rich.js`
+You can import each module individually or all at once importing `src/rich.js`
 
-`npm install --save richie-rich`  
+`npm install --save rich-js`  
 
 ## Documentation
 
-1. [Number](https://github.com/commodityvectors/richie-rich/wiki/Number)
-2. [Object](https://github.com/commodityvectors/richie-rich/wiki/Object)
-3. [Array](https://github.com/commodityvectors/richie-rich/wiki/Array)
+1. [Number](https://github.com/commodityvectors/rich-js/wiki/Number)
+2. [Object](https://github.com/commodityvectors/rich-js/wiki/Object)
+3. [Array](https://github.com/commodityvectors/rich-js/wiki/Array)
 
 ## Examples
 

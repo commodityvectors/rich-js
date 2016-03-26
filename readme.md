@@ -5,9 +5,18 @@ A JavaScript library for rich prototypes
 This is a simple library designed to give a belt of good utility functions throughout your well known data types
 
 ## How to use
-You can import each module individually or all at once importing `src/rich.js`
+
+```javascript
+var Rich = require('../modules');
+Rich.Core.applyAll(); // To apply all prototypes
+Rich.Array.applyRichPrototype(); // Applies only the Array prototype
+```
 
 `npm install --save rich-js`  
+
+## Safety
+
+This library try not to clash with any possible standard when naming methods.
 
 ## Documentation
 

@@ -1,9 +1,14 @@
 'use strict';
-let modulePath = '../src/number';
+
+let path = '../modules';
+let utilPath = `${path}/util.js`;
+let modulePath = `${path}/number.js`;
+
+jest.unmock(utilPath);
 jest.unmock(modulePath);
 
 describe('Number', () => {
-    require(modulePath);
+    require(modulePath).applyRichPrototype();
     describe('seconds', () => {
         it('should return the number as ms', () => {
             expect((1).second()).toBe(1000);

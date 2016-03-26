@@ -1,9 +1,14 @@
 'use strict';
-let modulePath = '../src/object';
+
+let path = '../modules';
+let utilPath = `${path}/util.js`;
+let modulePath = `${path}/object.js`;
+
+jest.unmock(utilPath);
 jest.unmock(modulePath);
 
 describe('Object', () => {
-    require(modulePath);
+    require(modulePath).applyRichPrototype();
     describe('getProperty', () => {
         it('should return a property by a given path', () => {
             let obj = {

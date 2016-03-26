@@ -1,10 +1,14 @@
 'use strict';
-let modulePath = '../src/array';
+
+let path = '../modules';
+let utilPath = `${path}/util.js`;
+let modulePath = `${path}/array.js`;
+
+jest.unmock(utilPath);
 jest.unmock(modulePath);
 
-
 describe('Array', () => {
-    require(modulePath);
+    require(modulePath).applyRichPrototype();
 
     describe('groupBy', () => {
         it('should groupBy a given property name', () => {

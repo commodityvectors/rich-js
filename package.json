@@ -1,6 +1,6 @@
 {
   "name": "rich-js",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A JavaScript library for rich prototypes",
   "main": "modules/index.js",
   "scripts": {

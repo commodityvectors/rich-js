@@ -6,11 +6,7 @@ var RichArray = require('./array.js');
 
 class RichCore {
     static applyAll() {
-        [
-            RichObject,
-            RichNumber,
-            RichArray
-        ].map((r) => {
+        [RichObject, RichNumber, RichArray].map((r) => {
             r.applyRichPrototype();
         });
     }

@@ -16,7 +16,29 @@ Rich.Array.applyRichPrototype(); // Applies only the Array prototype
 
 ## Safety
 
-This library try not to clash with any possible standard when naming methods.
+This library try not to clash with any possible standard when naming methods. And in case it clashes, it will not override the method and will output a warn in the console.
+
+## Prefix
+
+In case you want to prefix the new methods, you can do by:
+
+```javascript
+Rich.Util.prefix = 'r';
+Rich.Number.applyRichPrototype();
+
+(1).rseconds(); //1000
+```
+
+## Adding your own custom prototypes
+
+```javascript
+Rich.Util.applyToPrototype(Number, 'square', function() {
+    return this.valueOf() * this.valueOf();
+});
+
+(3).square();
+// 9
+```
 
 ## Documentation
 

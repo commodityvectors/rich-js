@@ -11,15 +11,18 @@ class RichNumber {
         });
 
         RichUtil.applyToPrototype(Number, ['minutes', 'minute'], function() {
-            return this.valueOf() * (60).seconds();
+            let methodName = RichUtil.methodName('seconds');
+            return this.valueOf() * (60)[methodName]();
         });
 
         RichUtil.applyToPrototype(Number, ['hours', 'hour'], function() {
-            return this.valueOf() * (60).minutes();
+            let methodName = RichUtil.methodName('minutes');
+            return this.valueOf() * (60)[methodName]();
         });
 
         RichUtil.applyToPrototype(Number, ['days', 'day'], function() {
-            return this.valueOf() * (24).hours();
+            let methodName = RichUtil.methodName('hours');
+            return this.valueOf() * (24)[methodName]();
         });
 
         RichUtil.applyToPrototype(Number, 'times', function() {

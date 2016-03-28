@@ -2,9 +2,11 @@
 'use strict';
 
 var Rich = require('../modules');
+console.log(Rich);
+Rich.Util.prefix = 'r';
 Rich.Core.applyAll();
 
-console.log('3 Minutes', 3..minutes());
+console.log('3 Minutes', 3..rminutes());
 
 },{"../modules":4}],2:[function(require,module,exports){
 'use strict';
@@ -97,10 +99,11 @@ module.exports = {
     'Core': require('./core.js'),
     'Object': require('./object.js'),
     'Number': require('./number.js'),
-    'Array': require('./array.js')
+    'Array': require('./array.js'),
+    'Util': require('./util.js')
 };
 
-},{"./array.js":2,"./core.js":3,"./number.js":5,"./object.js":6}],5:[function(require,module,exports){
+},{"./array.js":2,"./core.js":3,"./number.js":5,"./object.js":6,"./util.js":7}],5:[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -124,15 +127,18 @@ var RichNumber = function () {
             });
 
             RichUtil.applyToPrototype(Number, ['minutes', 'minute'], function () {
-                return this.valueOf() * 60..seconds();
+                var methodName = RichUtil.methodName('seconds');
+                return this.valueOf() * 60[methodName]();
             });
 
             RichUtil.applyToPrototype(Number, ['hours', 'hour'], function () {
-                return this.valueOf() * 60..minutes();
+                var methodName = RichUtil.methodName('minutes');
+                return this.valueOf() * 60[methodName]();
             });
 
             RichUtil.applyToPrototype(Number, ['days', 'day'], function () {
-                return this.valueOf() * 24..hours();
+                var methodName = RichUtil.methodName('hours');
+                return this.valueOf() * 24[methodName]();
             });
 
             RichUtil.applyToPrototype(Number, 'times', function () {
@@ -204,9 +210,14 @@ var RichUtil = function () {
     }
 
     _createClass(RichUtil, null, [{
+        key: 'methodName',
+        value: function methodName(mn) {
+            return RichUtil.prefix + mn;
+        }
+    }, {
         key: 'getFromPrototype',
         value: function getFromPrototype(klass, methodName) {
-            return klass.prototype[methodName];
+            return klass.prototype[RichUtil.methodName(methodName)];
         }
     }, {
         key: 'applyToPrototype',
@@ -216,10 +227,10 @@ var RichUtil = function () {
             }
 
             methodNames.forEach(function (methodName) {
-                if (klass.prototype[methodName]) {
+                if (RichUtil.getFromPrototype(klass, methodName)) {
                     console.warn('Not implementing method ' + methodName + '. Prototype already implemented');
                 } else {
-                    klass.prototype[methodName] = fn;
+                    klass.prototype[RichUtil.methodName(methodName)] = fn;
                 }
             });
         }
@@ -227,6 +238,8 @@ var RichUtil = function () {
 
     return RichUtil;
 }();
+
+RichUtil.prefix = '';
 
 module.exports = RichUtil;
 
